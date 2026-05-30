@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUBURB CAFE — Minimalist Coffee, Matcha & Artisanal Pastries</title>
+  <meta name="description"
+    content="Welcome to Suburb Cafe. Experience premium specialty coffees, artisanal pastries, and handcrafted matchas in a modern, minimalist atmosphere. Order or book a table directly on WhatsApp.">
+
+  <!-- Leaflet CSS for Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=9">
+</head>
+
+<body>
+
+  <!-- --- Header / Navbar --- -->
+  <header class="header" id="header">
+    <div class="container nav-container">
+      <a href="#" class="logo" id="logoLink">
+        <img src="logo.jfif?v=10" alt="Suburb cafe Logo" class="logo-img">
+        <div class="logo-text-wrapper">
+          <div class="logo-title">Suburb <span>cafe</span></div>
+          <span class="logo-slogan">Food is language of LOve</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#instagram" class="nav-link">Social</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#location" class="nav-link">Visit Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- Animated Bullet List under Navbar (Menu Page) -->
+  <div class="menu-bullets">
+    <ul class="menu-bullets-list">
+
+
+
+
+    </ul>
+  </div>
+
+  <!-- --- Hero Section --- -->
+  <section class="hero section" id="home">
+    <div class="container hero-container">
+      <div class="hero-grid">
+        <div class="hero-image-wrapper reveal">
+          <img src="cafe_2.jpg" alt="Suburb Cafe Atmosphere" class="hero-img-left">
+        </div>
+        <div class="hero-content reveal reveal-delay-1">
+          <span class="section-tag">Welcome to Suburb</span>
+          <h1>Where Taste Meets <span>Simplicity</span></h1>
+          <p>A quiet urban retreat built around exceptional specialty coffee, artisanal baking, and high-grade
+            stoneground matcha. Slow down, sip, and find your rhythm.</p>
+          <div class="hero-btns">
+            <a href="#menu" class="btn btn-primary">Explore Menu <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- About Section --- -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper reveal">
+          <img src="cafe_coffee.png" alt="Specialty Latte Art" class="about-image">
+          <div class="about-image-overlay">
+            <div class="about-overlay-text">
+              <h4>Single-Origin Arabica</h4>
+              <p>Ethiopia, Yirgacheffe • Light Roast</p>
+            </div>
+            <i data-lucide="coffee" style="color: var(--accent);"></i>
+          </div>
+        </div>
+
+        <div class="about-content reveal reveal-delay-1">
+          <span class="section-tag">Our Philosophy</span>
+          <h3>Crafting Moments of Pure Solitude</h3>
+          <p>At Suburb, we believe that coffee is more than a morning ritual—it is a sensory anchor. We source our beans
+            ethically from micro-lots across Central Africa and Latin America, roasting each batch to highlight its
+            natural sweetness and complex floral highlights.</p>
+          <p>Complementing our roast profile is our stoneground Uji matcha, whisks of premium tea leaves that create a
+            smooth, velvety experience. Minimal styling, raw materials, and curated acoustics ensure that your time with
+            us is beautifully uninterrupted.</p>
+
+          <div class="about-stats">
+            <div class="stat-item">
+              <h4>88+</h4>
+              <p>Coffee Roast Score</p>
+            </div>
+            <div class="stat-item">
+              <h4>100%</h4>
+              <p>Ethically Sourced</p>
+            </div>
+          </div>
+
+          <a href="#menu" class="btn btn-secondary">Our Brew Menu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Menu Section --- -->
+  <section class="menu section" id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Menu Curation</span>
+        <h2 class="section-title">The Ritual List</h2>
+        <p class="section-subtitle">Discover our complete menu of freshly brewed drinks, quick plates, Chinese starters,
+          rich mains, and signature desserts.</p>
+      </div>
+
+      <!-- Menu Highlight Notes / Policies -->
+      <div class="menu-highlight-notes reveal">
+        <div class="menu-note-item">
+          <span class="gold-bullet">•</span> Rates Excluding GST • Parcel Charges will be extra • Please allow us 15-20
+          minutes for food preparation
+        </div>
+        <div class="menu-note-item warning-note">
+          Please let us know if you have special dietary requirements, food allergies or food intolerance
+        </div>
+      </div>
+
+
+      <!-- Menu Navigation and Filter Bar -->
+      <div class="menu-filter-bar reveal">
+        <div class="menu-tabs">
+          <button class="menu-tab-btn active" data-tab="all">All Items</button>
+          <button class="menu-tab-btn" data-tab="beverages">Brews & Shakes</button>
+          <button class="menu-tab-btn" data-tab="starters">Quick Bites</button>
+          <button class="menu-tab-btn" data-tab="chinese">Chinese & Soups</button>
+          <button class="menu-tab-btn" data-tab="mains">Mains & Bowls</button>
+          <button class="menu-tab-btn" data-tab="desserts">Desserts</button>
+        </div>
+
+        <div class="menu-controls">
+          <div class="dietary-filter">
+            <button class="dietary-btn active" data-diet="all">All</button>
+            <button class="dietary-btn" data-diet="veg">
+              <span class="veg-non-veg-badge badge-veg"><span class="badge-dot"></span></span> Veg
+            </button>
+            <button class="dietary-btn" data-diet="egg">
+              <span class="veg-non-veg-badge badge-egg"><span class="badge-dot"></span></span> Egg
+            </button>
+            <button class="dietary-btn" data-diet="nonveg">
+              <span class="veg-non-veg-badge badge-nonveg"><span class="badge-dot"></span></span> Non-Veg
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Download Bar (Next line, aligned right) -->
+      <div class="menu-search-download-bar reveal">
+        <div class="search-input-wrapper">
+          <i data-lucide="search" class="search-icon"></i>
+          <input type="text" id="menuSearch" placeholder="Search..." class="form-control menu-search-input">
+        </div>
+        <a href="Reference/Cafe_Menu.pdf" download="Suburb_Cafe_Menu.pdf" class="btn btn-secondary download-menu-btn"
+          title="Download PDF Menu">
+          <i data-lucide="download"></i> Download Menu
+        </a>
+      </div>
+
+
+      <!-- Menu Grid -->
+      <div class="menu-grid reveal reveal-delay-1" id="menuGrid">
+        <!-- Will be dynamically populated by JS from menu_data.js -->
+      </div>
+
+
+
+
+
+
+
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- --- Instagram Feed Showcase --- -->
+  <section class="instagram section" id="instagram">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Social Gallery</span>
+        <h2 class="section-title">Follow Our Ritual</h2>
+        <p class="section-subtitle">Glimpses into our quiet atmosphere, weekly roasts, and community conversations.
+          Follow us at <a href="https://instagram.com/suburb__cafe" target="_blank"
+            style="color: var(--accent); text-decoration: underline;">@suburb__cafe</a></p>
+      </div>
+
+      <div class="insta-grid reveal reveal-delay-1">
+        <!-- Post 1 -->
+        <div class="insta-item" data-src="cafe_hero.png" id="insta-post-1">
+          <img src="cafe_hero.png" alt="Cafe ambiance" class="insta-img">
+          <div class="insta-overlay">
+            <span class="insta-stat"><i data-lucide="heart" style="fill: #fff;"></i> 142</span>
+            <span class="insta-stat"><i data-lucide="message-circle" style="fill: #fff;"></i> 12</span>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="insta-item" data-src="cafe_coffee.png" id="insta-post-2">
+          <img src="cafe_coffee.png" alt="Latte art close-up" class="insta-img">
+          <div class="insta-overlay">
+            <span class="insta-stat"><i data-lucide="heart" style="fill: #fff;"></i> 218</span>
+            <span class="insta-stat"><i data-lucide="message-circle" style="fill: #fff;"></i> 24</span>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="insta-item" data-src="cafe_pastry.png" id="insta-post-3">
+          <img src="cafe_pastry.png" alt="Croissant close-up" class="insta-img">
+          <div class="insta-overlay">
+            <span class="insta-stat"><i data-lucide="heart" style="fill: #fff;"></i> 189</span>
+            <span class="insta-stat"><i data-lucide="message-circle" style="fill: #fff;"></i> 16</span>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="insta-link-btn reveal">
+        <a href="https://instagram.com/suburb__cafe" target="_blank" class="btn btn-secondary">
+          <i data-lucide="instagram"></i> Connect on Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Lightbox for Instagram Grid --- -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close Lightbox">
+        <i data-lucide="x"></i> <span style="font-size: 0.9rem; margin-left: 0.25rem;">Close</span>
+      </button>
+      <img src="" alt="Instagram preview" class="lightbox-img" id="lightboxImg">
+    </div>
+  </div>
+
+  <!-- --- Reviews & Feedback Section --- -->
+  <section class="reviews section" id="reviews">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Guest Experiences</span>
+        <h2 class="section-title">Reviews & Feedback</h2>
+        <p class="section-subtitle">Read what our guests say about Suburb Cafe, or share your own experience with us.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Google Rating & Reviews Summary Card -->
+        <div class="reviews-summary-card reveal">
+          <div class="google-logo-wrapper">
+            <svg class="google-icon" viewBox="0 0 24 24" width="24" height="24">
+              <path fill="#EA4335" d="M12 5.04c1.67 0 3.2.58 4.38 1.7l3.27-3.27C17.67 1.63 14.98 1 12 1 7.35 1 3.4 3.65 1.56 7.56l3.85 2.99C6.3 7.64 8.94 5.04 12 5.04z"/>
+              <path fill="#4285F4" d="M23.49 12.27c0-.81-.07-1.59-.2-2.36H12v4.51h6.46c-.29 1.48-1.14 2.73-2.42 3.58v2.98h3.9c2.28-2.1 3.55-5.19 3.55-8.71z"/>
+              <path fill="#FBBC05" d="M5.41 14.93c-.24-.72-.37-1.49-.37-2.28s.13-1.56.37-2.28L1.56 7.56C.56 9.57 0 11.82 0 14.15s.56 4.58 1.56 6.59l3.85-2.99C5.17 17.03 5.04 16 5.04 14.93z"/>
+              <path fill="#34A853" d="M12 23c3.24 0 5.97-1.07 7.96-2.91l-3.9-2.98c-1.08.72-2.48 1.15-4.06 1.15-3.06 0-5.7-2.6-6.59-5.51L1.56 15.65C3.4 19.56 7.35 23 12 23z"/>
+            </svg>
+            <span class="google-title">Google Reviews</span>
+          </div>
+          <div class="rating-display">
+            <span class="rating-number" id="avgRating">4.8</span>
+            <div class="rating-stars" id="avgStars"></div>
+            <span class="reviews-count" id="reviewsCount">Based on 142 Google reviews</span>
+          </div>
+          
+          <div class="summary-meta">
+            <p>Our official Google Business rating is based on verified visits to Suburb Cafe Navarasapur, Vijayapura.</p>
+            <a href="https://www.google.com/search?q=Suburb.cafe+Navarasapur" target="_blank" class="btn btn-secondary review-link-btn">
+              Write a Google Review <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Feedback & Review Submission Form -->
+        <div class="feedback-form-card reveal reveal-delay-1">
+          <h3>Leave Your Feedback</h3>
+          <form id="feedbackForm" class="booking-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="feedbackName">Your Name</label>
+                <input type="text" id="feedbackName" required placeholder="John Doe" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Your Rating</label>
+                <div class="star-rating-select">
+                  <input type="radio" name="rating" id="star5" value="5" required><label for="star5" title="5 stars"><i data-lucide="star"></i></label>
+                  <input type="radio" name="rating" id="star4" value="4"><label for="star4" title="4 stars"><i data-lucide="star"></i></label>
+                  <input type="radio" name="rating" id="star3" value="3"><label for="star3" title="3 stars"><i data-lucide="star"></i></label>
+                  <input type="radio" name="rating" id="star2" value="2"><label for="star2" title="2 stars"><i data-lucide="star"></i></label>
+                  <input type="radio" name="rating" id="star1" value="1"><label for="star1" title="1 star"><i data-lucide="star"></i></label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="feedbackMessage">Your Review</label>
+              <textarea id="feedbackMessage" rows="4" required placeholder="Tell us about your experience..." class="form-control" style="resize: vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary reservation-btn" style="margin-top: 0.5rem;">
+              Submit Review <i data-lucide="send"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Feed / List of reviews -->
+      <div class="reviews-list-container reveal">
+        <h3 class="reviews-list-title">What Our Guests Say</h3>
+        <div class="reviews-list" id="reviewsList">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Location & Map Section --- -->
+  <section class="location section" id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-details reveal">
+          <div>
+            <span class="section-tag">Visit Us</span>
+            <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Find Directions to Suburb Cafe
+            </h2>
+            <p class="section-subtitle" style="margin-bottom: 0;">We are located opposite the 2nd Gate of Al Ameen
+              Hospital on Athani Road, Vijayapura. Come visit us any day of the week!</p>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon"><i data-lucide="map-pin"></i></div>
+            <div class="location-item-content">
+              <h4>Our Address</h4>
+              <p>Opposite 2nd Gate of Al Ameen Hospital,<br>Athani Road, Vijayapura,<br>Karnataka 586108, India</p>
+              <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.3rem;">(Opposite 2nd Gate of Al Ameen Hospital)
+              </p>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon"><i data-lucide="clock"></i></div>
+            <div class="location-item-content">
+              <h4>Opening Hours</h4>
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span class="hours-day">Monday – Sunday</span>
+                  <span class="hours-time">11:00 AM – 11:30 PM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-item">
+            <div class="location-item-icon"><i data-lucide="phone"></i></div>
+            <div class="location-item-content">
+              <h4>Phone &amp; Ordering</h4>
+              <p><a href="tel:+918217730770" style="color: var(--accent); text-decoration: none; font-weight: 600;">+91
+                  82177 30770</a></p>
+              <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 0.3rem;">(Takeaways prepare in 15–20 mins)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-wrapper reveal reveal-delay-1">
+          <!-- Styled Leaflet Map Container -->
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- --- Footer Section --- -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <h3 class="footer-logo">Suburb <span>café</span></h3>
+        <p class="footer-copyright">&copy; 2026 Suburb café. All rights reserved.</p>
+      </div>
+      <div class="footer-center">
+        <a href="https://wa.me/918217730770" target="_blank" class="footer-whatsapp-icon-btn"
+          aria-label="Chat on WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="#ffffff"
+              d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+          </svg>
+        </a>
+      </div>
+      <div class="footer-right">
+        <a href="https://instagram.com/suburb__cafe" target="_blank" class="footer-instagram-btn"
+          aria-label="Follow us on Instagram">
+          <i data-lucide="instagram"></i>
+          <span class="instagram-btn-text">FOLLOW <span class="handle">@SUBURB.CAFE</span></span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet Javascript for Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- App Logic Script -->
+  <script src="menu_data.js?v=9"></script>
+  <script src="app.js?v=9"></script>
+
+</body>
+
+</html>
