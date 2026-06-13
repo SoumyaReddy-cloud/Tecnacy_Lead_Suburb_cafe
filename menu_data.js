@@ -9,11 +9,12 @@ const MENU_PAGES = [
           {
             title: "SALAD",
             category: "starters",
-            headers: ["VEG", "CHICKEN"],
             items: [
-              { name: "GRILL SALAD", prices: [120, 160], isVeg: [true, false] },
-              { name: "CAESAR SALAD", prices: [120, 160], isVeg: [true, false] },
-              { name: "GREEK SALAD", prices: [140], isVeg: [true] }
+              { name: "GRILL SALAD VEG", price: 120, isVeg: true },
+              { name: "GRILL SALAD CHICKEN", price: 160, isVeg: false },
+              { name: "CAESAR SALAD VEG", price: 120, isVeg: true },
+              { name: "CAESAR SALAD CHICKEN", price: 160, isVeg: false },
+              { name: "GREEK SALAD", price: 140, isVeg: true }
             ]
           },
           {
@@ -29,9 +30,9 @@ const MENU_PAGES = [
           {
             title: "STARTER",
             category: "starters",
-            headers: ["VEG", "CHICKEN"],
             items: [
-              { name: "HERB SAUTEED", prices: [199, 259], isVeg: [true, false] },
+              { name: "HERB SAUTEED VEG", price: 199, isVeg: true },
+              { name: "HERB SAUTEED CHICKEN", price: 259, isVeg: false },
               { name: "CHICKEN TENDER", price: 199, isVeg: false },
               { name: "CHICKEN PICCATA", price: 199, isVeg: false },
               { name: "CRISPY CHICKEN LOLLIPOP", price: 149, isVeg: false, isSignature: true },
@@ -111,7 +112,8 @@ const MENU_PAGES = [
               { name: "PANEER TIKKA", price: 120, isVeg: true },
               { name: "CHOCOLATE SANDWICH", price: 80, isVeg: true },
               { name: "NUTELLA SANDWICH", price: 99, isVeg: true },
-              { name: "PITA BREAD", prices: [90, 110], isVeg: [true, false], headers: ["VEG", "NON-VEG"] }
+              { name: "PITA BREAD VEG", price: 90, isVeg: true },
+              { name: "PITA BREAD NON-VEG", price: 110, isVeg: false }
             ]
           },
           {
@@ -127,12 +129,15 @@ const MENU_PAGES = [
           {
             title: "PASTA",
             category: "mains",
-            headers: ["VEG", "CHICKEN"],
             items: [
-              { name: "ARRABIATA/ RED SAUCE PASTA", prices: [139, 159], isVeg: [true, false] },
-              { name: "ALFREDO/WHITE SAUCE PASTA", prices: [149, 169], isVeg: [true, false] }, // chicken alfredo is signature in original menu_data, we can show signature style for chicken price or whole item.
-              { name: "BARBARESCO/ PINK SAUCE PASTE", prices: [139, 159], isVeg: [true, false] },
-              { name: "MAC N CHEESE", prices: [159, 179], isVeg: [true, false] }
+              { name: "ARRABIATA/ RED SAUCE PASTA VEG", price: 139, isVeg: true },
+              { name: "ARRABIATA/ RED SAUCE PASTA CHICKEN", price: 159, isVeg: false },
+              { name: "ALFREDO/WHITE SAUCE PASTA VEG", price: 149, isVeg: true },
+              { name: "ALFREDO/WHITE SAUCE PASTA CHICKEN", price: 169, isVeg: false },
+              { name: "BARBARESCO/ PINK SAUCE PASTE VEG", price: 139, isVeg: true },
+              { name: "BARBARESCO/ PINK SAUCE PASTE CHICKEN", price: 159, isVeg: false },
+              { name: "MAC N CHEESE VEG", price: 159, isVeg: true },
+              { name: "MAC N CHEESE CHICKEN", price: 179, isVeg: false }
             ]
           }
         ]
