@@ -1,24 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 /* --- Design Tokens --- */
 :root {
-  --bg-primary: #0b0b0d;
-  --bg-secondary: #131318;
-  --bg-card: rgba(20, 20, 26, 0.65);
-  --accent: #c8af88;
-  --accent-rgb: 200, 175, 136;
-  --accent-hover: #dec49d;
-  --text-primary: #f8f8fa;
-  --text-secondary: #a5a5ae;
-  --text-muted: #64646b;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(255, 255, 255, 0.15);
-  --glass-bg: rgba(11, 11, 13, 0.8);
-  --glass-blur: blur(24px);
+  /* Dark Espresso Theme (default body color or for dark sections) */
+  --bg-primary: #120c09;
+  --bg-secondary: #1a120e;
+  --bg-card: rgba(30, 22, 18, 0.65);
+  --accent: #d2b28a;
+  --accent-rgb: 210, 178, 138;
+  --accent-hover: #e6c59d;
+  --text-primary: #f6f1ec;
+  --text-secondary: #bfaea2;
+  --text-muted: #7d6b5e;
+  --border: rgba(210, 178, 138, 0.15);
+  --border-hover: rgba(210, 178, 138, 0.3);
+  --glass-bg: rgba(18, 12, 9, 0.85);
+  --glass-blur: blur(20px);
   --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.25s ease;
-  --font-heading: 'Syne', sans-serif;
+  --font-heading: 'Cinzel', serif;
   --font-body: 'Outfit', sans-serif;
+  
+  /* Additional Light Theme Colors */
+  --light-bg-white: #fbfaf7;
+  --light-bg-beige: #f4eee0;
+  --light-text-dark: #2a1c15;
+  --light-text-secondary: #5a4539;
+  --light-text-muted: #8d7a6e;
+  --light-border: rgba(42, 28, 21, 0.12);
+  --light-border-hover: rgba(42, 28, 21, 0.25);
+  --light-card-bg: rgba(255, 255, 255, 0.95);
 }
 
 /* --- Base Reset --- */
@@ -2264,6 +2275,343 @@ select.form-control {
     padding: 2rem;
   }
 }
+
+/* --- Coffee House Theme Overrides for Sections --- */
+
+/* 1. Header Scrolled state adjustment */
+.header.scrolled {
+  background-color: rgba(18, 12, 9, 0.96) !important;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 2. About Section (Warm White Theme) */
+.about {
+  background-color: var(--light-bg-white) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.about .section-tag {
+  color: #a8845e !important;
+}
+
+.about h3, 
+.about h4, 
+.about .stat-item h4 {
+  color: var(--light-text-dark) !important;
+}
+
+.about p, 
+.about .stat-item p {
+  color: var(--light-text-secondary) !important;
+}
+
+.about-image-overlay {
+  background: var(--light-card-bg) !important;
+  border-color: var(--light-border) !important;
+}
+
+.about-overlay-text h4 {
+  color: var(--light-text-dark) !important;
+}
+
+.about-overlay-text p {
+  color: var(--light-text-secondary) !important;
+}
+
+.about .btn-secondary {
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.about .btn-secondary:hover {
+  border-color: var(--light-text-dark) !important;
+  background-color: rgba(42, 28, 21, 0.04) !important;
+}
+
+/* 3. Menu Section (Warm Beige Theme & Menu Page Cards) */
+.menu {
+  background-color: var(--light-bg-beige) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.menu .section-title {
+  color: var(--light-text-dark) !important;
+}
+
+.menu .section-subtitle {
+  color: var(--light-text-secondary) !important;
+}
+
+.menu-highlight-notes {
+  background: rgba(42, 28, 21, 0.03) !important;
+  border: 1px solid rgba(42, 28, 21, 0.1) !important;
+}
+
+.menu-note-item {
+  color: var(--light-text-dark) !important;
+}
+
+.menu-note-item.warning-note {
+  color: #a8845e !important;
+  border-top-color: var(--light-border) !important;
+}
+
+.menu-tab-btn {
+  border-color: var(--light-border) !important;
+  color: var(--light-text-secondary) !important;
+}
+
+.menu-tab-btn:hover,
+.menu-tab-btn.active {
+  border-color: var(--light-text-dark) !important;
+  color: var(--light-text-dark) !important;
+  background-color: rgba(42, 28, 21, 0.05) !important;
+}
+
+.dietary-filter {
+  background: rgba(42, 28, 21, 0.02) !important;
+  border-color: var(--light-border) !important;
+}
+
+.dietary-btn {
+  color: var(--light-text-secondary) !important;
+}
+
+.dietary-btn:hover {
+  color: var(--light-text-dark) !important;
+}
+
+.dietary-btn.active {
+  background-color: rgba(42, 28, 21, 0.08) !important;
+  color: var(--light-text-dark) !important;
+  border-color: var(--light-border) !important;
+}
+
+.search-input-wrapper .menu-search-input {
+  background-color: #ffffff !important;
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.search-input-wrapper .menu-search-input::placeholder {
+  color: var(--light-text-muted) !important;
+}
+
+.search-input-wrapper .search-icon {
+  color: var(--light-text-muted) !important;
+}
+
+.search-input-wrapper .menu-search-input:focus {
+  border-color: var(--light-text-dark) !important;
+  box-shadow: 0 0 15px rgba(42, 28, 21, 0.05) !important;
+}
+
+.search-input-wrapper .menu-search-input:focus + .search-icon {
+  color: var(--light-text-dark) !important;
+}
+
+.download-menu-btn {
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+  background-color: transparent !important;
+}
+
+.download-menu-btn:hover {
+  border-color: var(--light-text-dark) !important;
+  background-color: rgba(42, 28, 21, 0.04) !important;
+}
+
+/* Menu Page Card (Crisp White Menu Book Style) */
+.menu-page {
+  background: #ffffff !important;
+  border: 1px solid var(--light-border) !important;
+  outline: 1px solid rgba(42, 28, 21, 0.12) !important;
+  outline-offset: -12px !important;
+  box-shadow: 0 15px 35px rgba(42, 28, 21, 0.06) !important;
+}
+
+.menu-page::before {
+  border: 1px solid rgba(42, 28, 21, 0.12) !important;
+}
+
+.menu-page-title {
+  color: var(--light-text-dark) !important;
+}
+
+.menu-page-title::before,
+.menu-page-title::after {
+  background-color: var(--light-text-dark) !important;
+}
+
+.menu-section-title {
+  color: var(--light-text-dark) !important;
+  border-bottom: 2px solid var(--light-border) !important;
+  padding-bottom: 0.25rem !important;
+}
+
+.menu-section-header {
+  border-bottom: none !important;
+}
+
+.menu-column-headers {
+  color: var(--light-text-secondary) !important;
+}
+
+.menu-item-name {
+  color: var(--light-text-dark) !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 600 !important;
+}
+
+.menu-item-prices {
+  color: var(--light-text-dark) !important;
+}
+
+.menu-item-prices span.accent-price {
+  color: #a8845e !important;
+}
+
+.menu-item-dots {
+  border-bottom-color: rgba(42, 28, 21, 0.15) !important;
+}
+
+.menu-item-row.highlighted {
+  border-color: rgba(42, 28, 21, 0.18) !important;
+  background-color: rgba(42, 28, 21, 0.02) !important;
+}
+
+/* 4. Instagram Feed Section (Warm White Theme) */
+.instagram {
+  background-color: var(--light-bg-white) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.instagram .section-title {
+  color: var(--light-text-dark) !important;
+}
+
+.instagram .section-subtitle {
+  color: var(--light-text-secondary) !important;
+}
+
+.instagram .insta-item {
+  border-color: var(--light-border) !important;
+}
+
+.instagram .btn-secondary {
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.instagram .btn-secondary:hover {
+  border-color: var(--light-text-dark) !important;
+  background-color: rgba(42, 28, 21, 0.04) !important;
+}
+
+/* 5. Reviews Section (Warm Beige Theme) */
+.reviews {
+  background-color: var(--light-bg-beige) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.reviews .section-title {
+  color: var(--light-text-dark) !important;
+}
+
+.reviews .section-subtitle {
+  color: var(--light-text-secondary) !important;
+}
+
+.reviews-summary-card {
+  background: #ffffff !important;
+  border-color: var(--light-border) !important;
+  box-shadow: 0 15px 35px rgba(42, 28, 21, 0.06) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.reviews-summary-card .rating-number {
+  color: var(--light-text-dark) !important;
+}
+
+.reviews-summary-card .reviews-count {
+  color: var(--light-text-secondary) !important;
+}
+
+.reviews-summary-card .summary-meta {
+  border-top-color: var(--light-border) !important;
+}
+
+.reviews-summary-card .summary-meta p {
+  color: var(--light-text-secondary) !important;
+}
+
+.reviews-summary-card .btn-secondary {
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.reviews-summary-card .btn-secondary:hover {
+  border-color: var(--light-text-dark) !important;
+  background-color: rgba(42, 28, 21, 0.04) !important;
+}
+
+.feedback-form-card {
+  background: #ffffff !important;
+  border-color: var(--light-border) !important;
+  box-shadow: 0 15px 35px rgba(42, 28, 21, 0.06) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.feedback-form-card h3 {
+  color: var(--light-text-dark) !important;
+}
+
+.feedback-form-card .form-group label {
+  color: var(--light-text-secondary) !important;
+}
+
+.feedback-form-card .form-control {
+  background-color: #ffffff !important;
+  border-color: var(--light-border) !important;
+  color: var(--light-text-dark) !important;
+}
+
+.feedback-form-card .form-control:focus {
+  border-color: var(--light-text-dark) !important;
+  box-shadow: 0 0 15px rgba(42, 28, 21, 0.05) !important;
+}
+
+.reviews-list-container {
+  border-top-color: var(--light-border) !important;
+}
+
+.reviews-list-title {
+  color: var(--light-text-dark) !important;
+}
+
+.review-item {
+  background: #ffffff !important;
+  border-color: var(--light-border) !important;
+  box-shadow: 0 10px 25px rgba(42, 28, 21, 0.03) !important;
+}
+
+.review-item:hover {
+  border-color: var(--light-text-dark) !important;
+  box-shadow: 0 15px 30px rgba(42, 28, 21, 0.1) !important;
+}
+
+.review-item-author h4 {
+  color: var(--light-text-dark) !important;
+}
+
+.review-item-meta {
+  color: var(--light-text-muted) !important;
+}
+
+.review-item-body p {
+  color: var(--light-text-secondary) !important;
+}
+
 
 
 
